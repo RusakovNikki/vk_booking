@@ -1,38 +1,85 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  display: inline-block;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #0c73fe;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  &__img {
+    margin-right: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  &__title {
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    // font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 15px;
+  }
+}
+
+.link {
+  padding: 10px 15px 10px 40px;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  transition: all 0.4s;
+  border-radius: 5px;
+  position: relative;
+
+  &:hover {
+    background-color: rgba($color: #ffffff, $alpha: 0.3);
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+  }
+
+  &--contacts {
+    &::after {
+      background-image: url("../images/compass.svg");
+    }
+  }
+
+  &--start {
+    &::after {
+      background-image: url("../images/switch.svg");
+    }
   }
 }
