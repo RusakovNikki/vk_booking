@@ -1,7 +1,7 @@
 import React from "react"
 import Select from "react-select"
 
-// import { towers } from "../data/data,js"
+import { towers, levels, time, duration } from "../data/data"
 
 const Form: React.FC = () => {
   return (
@@ -15,10 +15,7 @@ const Form: React.FC = () => {
             classNamePrefix="list"
             placeholder=""
             id="qqq"
-            options={[
-              { value: "A", label: "Башня А" },
-              { value: "B", label: "Башня Б" },
-            ]}
+            options={towers}
           />
         </div>
 
@@ -26,40 +23,19 @@ const Form: React.FC = () => {
           <label className="main__label" htmlFor="react-select-3-input">
             Выбор этажа
           </label>
-          <Select
-            classNamePrefix="list"
-            placeholder=""
-            options={[
-              { value: "3", label: "3 этаж" },
-              { value: "4", label: "4 этаж" },
-            ]}
-          />
+          <Select classNamePrefix="list" placeholder="" options={levels} />
         </div>
         <div className="main__form-item">
           <label className="main__label" htmlFor="react-select-4-input">
             Время начала
           </label>
-          <Select
-            classNamePrefix="list"
-            placeholder=""
-            options={[
-              { value: "7", label: "7:00" },
-              { value: "8", label: "8:00" },
-            ]}
-          />
+          <Select classNamePrefix="list" placeholder="" options={time} />
         </div>
         <div className="main__form-item">
           <label className="main__label" htmlFor="react-select-5-input">
             Продолжительность
           </label>
-          <Select
-            classNamePrefix="list"
-            placeholder=""
-            options={[
-              { value: "1", label: "1 час" },
-              { value: "2", label: "2 часа" },
-            ]}
-          />
+          <Select classNamePrefix="list" placeholder="" options={duration} />
         </div>
       </div>
       <div className="main__form-item--btn">
