@@ -5,7 +5,7 @@ import Form from "./components/Form"
 import Preloader from "./components/Preloader"
 
 function App() {
-  const [isLoading, setIsLoading] = useState<Boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
   useEffect(() => {
     setTimeout(() => setIsLoading(true), 1000)

@@ -1,4 +1,4 @@
-import { IOptionsSelect } from "../types/data.js"
+import { IOptionsSelect } from "../types"
 import { getTime } from "../utils/getTime"
 
 export const towers: IOptionsSelect[] = [

@@ -1,7 +1,7 @@
 import React from "react"
 import Select from "react-select"
 
-import { towers, levels, time, duration } from "../data/data"
+import { towers, levels, time, duration } from "../data"
 
 const Form: React.FC = () => {
   return (
