@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
-type Form = {
+export type Form = {
   typeOfTower: string
   levelTower: string
   timeBooking: string
