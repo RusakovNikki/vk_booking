@@ -21,13 +21,22 @@ const Form: React.FC = () => {
           4 этаж
         </option>
       </select>
-      <label htmlFor="zone_level">Выбор области</label>
-      <select className="main__list" id="zone_level" name="zone_level">
-        <option className="main__list-item" value="3">
-          1 область
+      <label htmlFor="zone_time">Время начала</label>
+      <select className="main__list" id="zone_time" name="zone_time">
+        <option className="main__list-item" value="7:00">
+          7:00
         </option>
-        <option className="main__list-item" value="4">
-          2 область
+        <option className="main__list-item" value="8:00">
+          8:00
+        </option>
+      </select>
+      <label htmlFor="zone_level">Продолжительность</label>
+      <select className="main__list" id="zone_level" name="zone_level">
+        <option className="main__list-item" value="1">
+          1 час
+        </option>
+        <option className="main__list-item" value="2">
+          2 часа
         </option>
       </select>
     </form>
