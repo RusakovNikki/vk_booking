@@ -18,9 +18,9 @@ const Header: React.FC = () => {
             <a href="#" className="link link--contacts">
               Контакты
             </a>
-            <a href="#" className="link link--start">
+            <label htmlFor="react-select-2-input" className="link link--start">
               Начать работу
-            </a>
+            </label>
           </nav>
         </div>
       </div>

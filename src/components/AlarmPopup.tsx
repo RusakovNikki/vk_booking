@@ -20,7 +20,6 @@ const AlarmPopup = ({ alarm, setAlarm, error }: IProps) => {
     }
   }
 
-  //   console.log(err)
   if (!alarm) {
     return <></>
   }
