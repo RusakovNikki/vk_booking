@@ -1,44 +1,70 @@
 import React from "react"
+import Select from "react-select"
+
+// import { towers } from "../data/data,js"
 
 const Form: React.FC = () => {
   return (
     <form className="main__form" action="#">
-      <label htmlFor="type_tower">Выбор башни</label>
-      <select className="main__list" id="type_tower" name="type_tower">
-        <option className="main__list-item" value="A">
-          Башня А
-        </option>
-        <option className="main__list-item" value="B">
-          Башня Б
-        </option>
-      </select>
-      <label htmlFor="tower_level">Выбор этажа</label>
-      <select className="main__list" id="tower_level" name="tower_level">
-        <option className="main__list-item" value="3">
-          3 этаж
-        </option>
-        <option className="main__list-item" value="4">
-          4 этаж
-        </option>
-      </select>
-      <label htmlFor="zone_time">Время начала</label>
-      <select className="main__list" id="zone_time" name="zone_time">
-        <option className="main__list-item" value="7:00">
-          7:00
-        </option>
-        <option className="main__list-item" value="8:00">
-          8:00
-        </option>
-      </select>
-      <label htmlFor="zone_level">Продолжительность</label>
-      <select className="main__list" id="zone_level" name="zone_level">
-        <option className="main__list-item" value="1">
-          1 час
-        </option>
-        <option className="main__list-item" value="2">
-          2 часа
-        </option>
-      </select>
+      <div className="main__form-items">
+        <div className="main__form-item">
+          <label className="main__label" htmlFor="react-select-2-input">
+            Выбор башни
+          </label>
+          <Select
+            classNamePrefix="list"
+            placeholder=""
+            id="qqq"
+            options={[
+              { value: "A", label: "Башня А" },
+              { value: "B", label: "Башня Б" },
+            ]}
+          />
+        </div>
+
+        <div className="main__form-item">
+          <label className="main__label" htmlFor="react-select-3-input">
+            Выбор этажа
+          </label>
+          <Select
+            classNamePrefix="list"
+            placeholder=""
+            options={[
+              { value: "3", label: "3 этаж" },
+              { value: "4", label: "4 этаж" },
+            ]}
+          />
+        </div>
+        <div className="main__form-item">
+          <label className="main__label" htmlFor="react-select-4-input">
+            Время начала
+          </label>
+          <Select
+            classNamePrefix="list"
+            placeholder=""
+            options={[
+              { value: "7", label: "7:00" },
+              { value: "8", label: "8:00" },
+            ]}
+          />
+        </div>
+        <div className="main__form-item">
+          <label className="main__label" htmlFor="react-select-5-input">
+            Продолжительность
+          </label>
+          <Select
+            classNamePrefix="list"
+            placeholder=""
+            options={[
+              { value: "1", label: "1 час" },
+              { value: "2", label: "2 часа" },
+            ]}
+          />
+        </div>
+      </div>
+      <div className="main__form-item--btn">
+        <button className="main__btn">Найти коворкинг</button>
+      </div>
     </form>
   )
 }

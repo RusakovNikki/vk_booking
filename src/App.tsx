@@ -1,11 +1,21 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import "./styles/App.scss"
 import Header from "./components/Header"
 import Form from "./components/Form"
+import Preloader from "./components/Preloader"
 
 function App() {
+  const [isLoading, setIsLoading] = useState<Boolean>(false)
+
+  useEffect(() => {
+    setTimeout(() => setIsLoading(true), 1000)
+  }, [])
+
+  if (!isLoading) {
+    return <Preloader />
+  }
   return (
-    <>
+    <div className="smooth">
       <Header />
       <main className="main">
         <section className="main__content">
@@ -18,7 +28,8 @@ function App() {
           </div>
         </section>
       </main>
-    </>
+      <footer className="footer"></footer>
+    </div>
   )
 }
 
