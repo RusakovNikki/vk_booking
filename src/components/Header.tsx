@@ -1,7 +1,12 @@
 import React from "react"
+import AnchorLink from "./AnchorLink"
 import logoPNG from "../images/logo.png"
 
-const Header: React.FC = () => {
+interface IHeader {
+  currentref: React.RefObject<HTMLDivElement>
+}
+
+const Header: React.FC<IHeader> = ({ currentref }) => {
   return (
     <header className="header">
       <div className="container">
@@ -15,9 +20,10 @@ const Header: React.FC = () => {
             </a>
           </div>
           <nav className="header__nav">
-            <a href="#" className="link link--contacts">
+            {/* <a href="#" className="link link--contacts">
               Контакты
-            </a>
+            </a> */}
+            <AnchorLink href={currentref}>Контакты</AnchorLink>
             <label htmlFor="react-select-2-input" className="link link--start">
               Начать работу
             </label>

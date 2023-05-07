@@ -54,7 +54,7 @@ const FormItems: React.FC = () => {
           Выбор башни
         </label>
         <Select
-          onMenuOpen={() => {
+          onMenuClose={() => {
             if (!data.typeOfTower) setIsEmptyTowerInput(true)
           }}
           classNamePrefix="list"
@@ -72,7 +72,7 @@ const FormItems: React.FC = () => {
           Выбор этажа
         </label>
         <Select
-          onMenuOpen={() => {
+          onMenuClose={() => {
             if (!data.levelTower) setIsEmptyLevelInput(true)
           }}
           classNamePrefix="list"
@@ -89,7 +89,7 @@ const FormItems: React.FC = () => {
           Время начала
         </label>
         <Select
-          onMenuOpen={() => {
+          onMenuClose={() => {
             if (!data.timeBooking) setIsEmptyTimeInput(true)
           }}
           classNamePrefix="list"
@@ -104,7 +104,7 @@ const FormItems: React.FC = () => {
           Продолжительность
         </label>
         <Select
-          onMenuOpen={() => {
+          onMenuClose={() => {
             if (!data.durationBooking) setIsEmptyDurationInput(true)
           }}
           classNamePrefix="list"
