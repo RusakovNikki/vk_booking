@@ -1,0 +1,127 @@
+.seat-map {
+  background: rgb(12, 117, 254);
+  background: linear-gradient(
+    90deg,
+    rgba(12, 117, 254, 0.6475840336) 0%,
+    rgb(12, 117, 254) 50%,
+    rgba(12, 117, 254, 0.8044467787) 93%
+  );
+  &__container {
+    max-width: 1300px;
+    height: 600px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__inner {
+    width: 1000px;
+    height: 100%;
+    background-image: url("../images/scheme.png");
+    background-position: 0px -70px;
+    background-size: 1000px;
+    background-repeat: no-repeat;
+    display: flex;
+    position: relative;
+  }
+
+  &__description {
+    padding: 20px;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    color: #fff;
+    position: absolute;
+    display: none;
+    z-index: 100;
+    width: 200px;
+  }
+
+  &__title {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    background-color: rgba($color: #fff, $alpha: 0.1);
+    position: absolute;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba($color: #fff, $alpha: 0.5);
+
+      .seat-map__description {
+        display: block;
+      }
+    }
+
+    &--1 {
+      top: 307px;
+      left: 223px;
+      width: 163px;
+      height: 71px;
+    }
+
+    &--2 {
+      top: 379px;
+      left: 228px;
+      width: 159px;
+      height: 71px;
+    }
+
+    &--3 {
+      top: 307px;
+      left: 434px;
+      width: 72px;
+      height: 73px;
+    }
+
+    &--4 {
+      top: 383px;
+      left: 434px;
+      width: 72px;
+      height: 62px;
+    }
+
+    &--5 {
+      top: 448px;
+      left: 434px;
+      width: 72px;
+      height: 72px;
+    }
+
+    &--6 {
+      top: 448px;
+      left: 643px;
+      width: 72px;
+      height: 72px;
+    }
+
+    &--7 {
+      top: 452px;
+      left: 763px;
+      width: 159px;
+      height: 66px;
+    }
+
+    &--8 {
+      top: 383px;
+      left: 763px;
+      width: 159px;
+      height: 66px;
+    }
+
+    &--9 {
+      top: 63px;
+      left: 367px;
+      width: 64px;
+      height: 190px;
+    }
+
+    &--10 {
+      top: 63px;
+      left: 434px;
+      width: 67px;
+      height: 190px;
+    }
+  }
+}
