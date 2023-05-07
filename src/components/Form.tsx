@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import FormItems from "./FormItems"
+import { useNavigate } from "react-router-dom"
 import { useAppSelector } from "..//hooks"
 import AlarmPopup from "./AlarmPopup"
 import { getErrorItem } from "../utils/getErrorItem"
@@ -7,6 +8,7 @@ import { getErrorItem } from "../utils/getErrorItem"
 const Form: React.FC = () => {
   const [alarm, setAlarm] = useState<boolean>(false)
   const [error, setError] = useState<string>("")
+  const navigate = useNavigate()
 
   const form = useAppSelector((state) => state.form)
   const { typeOfTower, durationBooking, levelTower, timeBooking } = form
@@ -15,6 +17,7 @@ const Form: React.FC = () => {
     e.preventDefault()
 
     if (typeOfTower && durationBooking && levelTower && timeBooking) {
+      navigate("/result")
     } else {
       setAlarm(true)
       setError(getErrorItem(form))

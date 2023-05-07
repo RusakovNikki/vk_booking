@@ -1,7 +1,7 @@
 import React from "react"
 
 const ResultPage = () => {
-  return <div></div>
+  return <div>Hello</div>
 }
 
 export default ResultPage

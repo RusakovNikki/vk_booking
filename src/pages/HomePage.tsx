@@ -1,22 +1,11 @@
-import React, { useEffect, useState } from "react"
-import Footer from "../components/Footer"
+import React from "react"
 import Form from "../components/Form"
-import Preloader from "../components/Preloader"
 
 interface IHome {
   currentref: React.RefObject<HTMLDivElement>
 }
 
-const HomePage: React.FC<IHome> = ({ currentref }) => {
-  const [isLoading, setIsLoading] = useState<boolean>(false)
-
-  useEffect(() => {
-    setTimeout(() => setIsLoading(true), 1000)
-  }, [])
-
-  if (!isLoading) {
-    return <Preloader />
-  }
+const HomePage: React.FC<IHome> = () => {
   return (
     <div className="smooth">
       <main className="main">
@@ -30,7 +19,6 @@ const HomePage: React.FC<IHome> = ({ currentref }) => {
           </div>
         </section>
       </main>
-      <Footer currentref={currentref} />
     </div>
   )
 }

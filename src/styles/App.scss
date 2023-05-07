@@ -151,6 +151,7 @@ li {
 
     &--btn {
       width: 15%;
+      min-width: 92px;
     }
 
     &:first-child .list__control {
@@ -311,6 +312,10 @@ li {
     align-items: center;
     justify-content: center;
     animation: App-logo-spin 1 3s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
 
     @keyframes App-logo-spin {
       25% {
