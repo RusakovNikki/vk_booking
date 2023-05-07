@@ -7,19 +7,19 @@ export const towers: IOptionsSelect[] = [
 ]
 
 export const levels: IOptionsSelect[] = new Array(24).fill({}).map((_, i) => ({
-  value: `${i + 3}`,
+  value: `${i + 3} level`,
   label: `${i + 3} этаж`,
 }))
 
 export const time: IOptionsSelect[] = new Array(24).fill({}).map((_, i) => ({
-  value: `${i}`,
+  value: `${i}:00`,
   label: `${i}:00`,
 }))
 
 export const duration: IOptionsSelect[] = new Array(24)
   .fill({})
   .map((_, i) => ({
-    value: `${i + 1}`,
+    value: `${i + 1} hour(s)`,
     label: `${i + 1} ${getTime(i + 1)}`,
   }))
 

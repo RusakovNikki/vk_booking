@@ -56,7 +56,6 @@ const FormItems: React.FC = () => {
       setIsEmptyDate(false)
     }
   }
-  console.log(data)
 
   return (
     <>
@@ -78,7 +77,7 @@ const FormItems: React.FC = () => {
         )}
       </div>
       <div className="main__form-item">
-        <label className="main__label" htmlFor="react-select-3-input">
+        <label className="main__label label" htmlFor="react-select-3-input">
           Выбор этажа
         </label>
         <Select

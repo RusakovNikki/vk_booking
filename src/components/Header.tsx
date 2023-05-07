@@ -1,30 +1,33 @@
 import React from "react"
 import AnchorLink from "./AnchorLink"
 import logoPNG from "../images/logo.png"
-import { Link } from "react-router-dom"
-import { useAppDispatch } from "../hooks"
-import { setDefaultValue } from "../store/formSlice"
+import { useNavigate } from "react-router-dom"
+// import { useAppDispatch } from "../hooks"
+// import { setDefaultValue } from "../store/formSlice"
 
 interface IHeader {
   currentref: React.RefObject<HTMLDivElement>
 }
 
 const Header: React.FC<IHeader> = ({ currentref }) => {
-  const dispatch = useAppDispatch()
+  // const dispatch = useAppDispatch()
+  const navigate = useNavigate()
+
+  const linkHandler = () => {
+    // dispatch(setDefaultValue())
+    navigate("/")
+  }
   return (
     <header className="header smooth">
       <div className="container">
         <div className="header__inner">
-          <div
-            className="header__logo logo"
-            onClick={() => dispatch(setDefaultValue())}
-          >
-            <Link className="header__logo-link" to="/">
+          <div className="header__logo logo" onClick={linkHandler}>
+            <a className="header__logo-link" href="#">
               <img className="logo__img" src={logoPNG} alt="Логотип коипании" />
-            </Link>
-            <Link className="logo__link" to="/">
+            </a>
+            <a className="logo__link" href="#">
               <span className="logo__title">Jamboo Software</span>
-            </Link>
+            </a>
           </div>
           <nav className="header__nav">
             {/* <a href="#" className="link link--contacts">

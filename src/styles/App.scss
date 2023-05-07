@@ -46,6 +46,7 @@ li {
 }
 
 .logo {
+  cursor: pointer;
   display: flex;
   align-items: center;
   &__img {
@@ -214,6 +215,26 @@ li {
     background-color: #ff6f32;
     // &--active {
     // }
+  }
+}
+
+.button {
+  cursor: pointer;
+  background-color: #ff6f32;
+  width: 100px;
+  height: 60px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: all 0.1s;
+
+  &:hover {
+    color: rgba($color: #fff, $alpha: 0.8);
+  }
+
+  &:active {
+    color: #fff;
+    background-color: rgba($color: #ff621f, $alpha: 0.7);
   }
 }
 

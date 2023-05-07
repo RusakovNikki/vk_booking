@@ -1,4 +1,4 @@
-.seat-map {
+.result-container {
   background: rgb(12, 117, 254);
   background: linear-gradient(
     90deg,
@@ -6,6 +6,9 @@
     rgb(12, 117, 254) 50%,
     rgba(12, 117, 254, 0.8044467787) 93%
   );
+}
+
+.seat-map {
   &__container {
     max-width: 1300px;
     height: 600px;
@@ -13,6 +16,15 @@
     overflow-y: hidden;
     display: flex;
     justify-content: center;
+  }
+
+  &__margin-collapse {
+    width: 100px;
+    height: 1px;
+  }
+
+  &__inner-title {
+    color: #fff;
   }
 
   &__inner {
@@ -56,6 +68,7 @@
     background-color: rgba($color: #fff, $alpha: 0.1);
     position: absolute;
     cursor: pointer;
+    transition: all 0.4s;
 
     &:hover {
       background-color: rgba($color: #fff, $alpha: 0.5);
@@ -63,6 +76,11 @@
       .seat-map__description {
         display: block;
       }
+    }
+
+    &--selected {
+      background-color: rgba($color: #ff621f, $alpha: 0.5);
+      border: 2px solid red;
     }
 
     &--1 {
@@ -134,5 +152,50 @@
       width: 67px;
       height: 190px;
     }
+  }
+}
+
+.feedback-form {
+  background-color: #fff;
+  &__title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  &__inner {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    position: relative;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__btn {
+    margin-top: 15px;
+    min-width: 163px;
+  }
+
+  &__textarea {
+    position: relative;
+    width: 100%;
+    min-height: 60px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    margin: 30px 0 15px;
+    border-radius: 10px;
+  }
+
+  &__label {
+    position: absolute;
+    top: 95px;
+    font-size: 10px;
+    font-weight: bold;
+    // color: #fff;
   }
 }

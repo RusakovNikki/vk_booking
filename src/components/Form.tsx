@@ -1,9 +1,10 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import FormItems from "./FormItems"
 import { useNavigate } from "react-router-dom"
-import { useAppSelector } from "../hooks"
+import { useAppDispatch, useAppSelector } from "../hooks"
 import AlarmPopup from "./AlarmPopup"
 import { getErrorItem } from "../utils/getErrorItem"
+import { setDefaultValue } from "../store/formSlice"
 
 const Form: React.FC = () => {
   const [alarm, setAlarm] = useState<boolean>(false)
@@ -13,6 +14,8 @@ const Form: React.FC = () => {
   const form = useAppSelector((state) => state.form)
   const { typeOfTower, durationBooking, levelTower, timeBooking, dateBooking } =
     form
+
+  const dispatch = useAppDispatch()
 
   const searchResult = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
@@ -30,7 +33,12 @@ const Form: React.FC = () => {
       setError(getErrorItem(form))
     }
   }
-  getErrorItem(form)
+  useEffect(() => {
+    console.log("qqq")
+
+    dispatch(setDefaultValue())
+  }, [])
+
   return (
     <>
       <form className="main__form" action="#">
@@ -38,7 +46,7 @@ const Form: React.FC = () => {
           <FormItems />
         </div>
         <div className="main__form-item--btn">
-          <button className="main__btn" onClick={searchResult}>
+          <button className="main__btn btn" onClick={searchResult}>
             Найти коворкинг
           </button>
         </div>
