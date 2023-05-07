@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import FormItems from "./FormItems"
 import { useNavigate } from "react-router-dom"
-import { useAppSelector } from "..//hooks"
+import { useAppSelector } from "../hooks"
 import AlarmPopup from "./AlarmPopup"
 import { getErrorItem } from "../utils/getErrorItem"
 
@@ -11,12 +11,19 @@ const Form: React.FC = () => {
   const navigate = useNavigate()
 
   const form = useAppSelector((state) => state.form)
-  const { typeOfTower, durationBooking, levelTower, timeBooking } = form
+  const { typeOfTower, durationBooking, levelTower, timeBooking, dateBooking } =
+    form
 
   const searchResult = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
 
-    if (typeOfTower && durationBooking && levelTower && timeBooking) {
+    if (
+      typeOfTower &&
+      durationBooking &&
+      levelTower &&
+      timeBooking &&
+      dateBooking
+    ) {
       navigate("/result")
     } else {
       setAlarm(true)

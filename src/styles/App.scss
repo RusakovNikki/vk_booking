@@ -193,6 +193,16 @@ li {
     }
   }
 
+  &__item-date {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
   &__item-decorate {
     position: absolute;
     bottom: -10px;
@@ -204,6 +214,17 @@ li {
     background-color: #ff6f32;
     // &--active {
     // }
+  }
+}
+
+.react-datepicker {
+  &__input-container {
+    input {
+      height: 60px;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 10px;
+    }
   }
 }
 

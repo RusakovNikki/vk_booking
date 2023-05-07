@@ -1,9 +1,12 @@
 import React, { useState } from "react"
 import Select, { SingleValue } from "react-select"
+import DatePicker from "react-datepicker"
+import "react-datepicker/dist/react-datepicker.css"
 import { towers, levels, time, duration } from "../data"
 import { useAppDispatch, useAppSelector } from "../hooks"
 import { IOptionsSelect } from "../types"
 import {
+  setDateBooking,
   setDurationBooking,
   setLevelTower,
   setTimeBooking,
@@ -16,6 +19,7 @@ const FormItems: React.FC = () => {
   const [isEmptyLevelInput, setIsEmptyLevelInput] = useState(false)
   const [isEmptyTimeInput, setIsEmptyTimeInput] = useState(false)
   const [isEmptyDurationInput, setIsEmptyDurationInput] = useState(false)
+  const [isEmptyDate, setIsEmptyDate] = useState(false)
 
   const data = useAppSelector((state) => state.form)
 
@@ -45,6 +49,13 @@ const FormItems: React.FC = () => {
       setIsEmptyDurationInput(false)
     }
   }
+
+  const onChangeDate = (newValue: string) => {
+    if (newValue) {
+      dispatch(setDateBooking(newValue))
+      setIsEmptyDate(false)
+    }
+  }
   console.log(data)
 
   return (
@@ -66,7 +77,6 @@ const FormItems: React.FC = () => {
           <div className="main__item-decorate smooth"></div>
         )}
       </div>
-
       <div className="main__form-item">
         <label className="main__label" htmlFor="react-select-3-input">
           Выбор этажа
@@ -83,6 +93,18 @@ const FormItems: React.FC = () => {
         {isEmptyLevelInput && (
           <div className="main__item-decorate smooth"></div>
         )}
+      </div>
+      <div className="main__form-item">
+        <label className="main__label" htmlFor="date">
+          Дата
+        </label>
+        <DatePicker
+          selected={new Date(data.dateBooking)}
+          onChange={(date: Date) => {
+            if (date) onChangeDate(date.toISOString())
+          }}
+        />
+        {isEmptyDate && <div className="main__item-decorate smooth"></div>}
       </div>
       <div className="main__form-item">
         <label className="main__label" htmlFor="react-select-4-input">

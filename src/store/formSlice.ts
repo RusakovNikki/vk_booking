@@ -5,6 +5,7 @@ export type Form = {
   levelTower: string
   timeBooking: string
   durationBooking: string
+  dateBooking: string
 }
 
 const initialState: Form = {
@@ -12,6 +13,7 @@ const initialState: Form = {
   levelTower: "",
   timeBooking: "",
   durationBooking: "",
+  dateBooking: new Date().toISOString(),
 }
 
 const formSlice = createSlice({
@@ -30,6 +32,16 @@ const formSlice = createSlice({
     setDurationBooking(state, action: PayloadAction<string>) {
       state.durationBooking = action.payload
     },
+    setDateBooking(state, action: PayloadAction<string>) {
+      state.dateBooking = action.payload
+    },
+    setDefaultValue(state) {
+      state.durationBooking = initialState.durationBooking
+      state.levelTower = initialState.levelTower
+      state.timeBooking = initialState.timeBooking
+      state.typeOfTower = initialState.typeOfTower
+      state.dateBooking = initialState.dateBooking
+    },
   },
 })
 
@@ -38,6 +50,8 @@ export const {
   setLevelTower,
   setTimeBooking,
   setTypeOfTower,
+  setDefaultValue,
+  setDateBooking,
 } = formSlice.actions
 
 export default formSlice.reducer

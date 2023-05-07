@@ -2,17 +2,23 @@ import React from "react"
 import AnchorLink from "./AnchorLink"
 import logoPNG from "../images/logo.png"
 import { Link } from "react-router-dom"
+import { useAppDispatch } from "../hooks"
+import { setDefaultValue } from "../store/formSlice"
 
 interface IHeader {
   currentref: React.RefObject<HTMLDivElement>
 }
 
 const Header: React.FC<IHeader> = ({ currentref }) => {
+  const dispatch = useAppDispatch()
   return (
     <header className="header smooth">
       <div className="container">
         <div className="header__inner">
-          <div className="header__logo logo">
+          <div
+            className="header__logo logo"
+            onClick={() => dispatch(setDefaultValue())}
+          >
             <Link className="header__logo-link" to="/">
               <img className="logo__img" src={logoPNG} alt="Логотип коипании" />
             </Link>

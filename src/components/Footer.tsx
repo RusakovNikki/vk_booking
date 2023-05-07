@@ -16,6 +16,7 @@ const Footer: React.FC<IFooter> = ({ currentref }) => {
                   className="footer__item-link footer__item-link--vk"
                   href="https://vk.com/nike_gcs"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Vk
                 </a>
@@ -25,6 +26,7 @@ const Footer: React.FC<IFooter> = ({ currentref }) => {
                   className="footer__item-link footer__item-link--telegram"
                   href="https://t.me/Nikita_Rusakov1337"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Telegram
                 </a>
@@ -34,6 +36,7 @@ const Footer: React.FC<IFooter> = ({ currentref }) => {
                   className="footer__item-link footer__item-link--git"
                   href="https://github.com/RusakovNikki"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Github
                 </a>

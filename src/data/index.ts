@@ -23,19 +23,55 @@ export const duration: IOptionsSelect[] = new Array(24)
     label: `${i + 1} ${getTime(i + 1)}`,
   }))
 
-// export const db = [
-//   {
-//     id: 1,
-//     tower: "A", //A, B
-//     level: 3, //3,4...27
-//     number: 1, //1,2...10,
-//     time: [
-//       0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-//       21, 22, 23,
-//     ],
-//     duration: [
-//       1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-//       22, 23,
-//     ],
-//   },
-// ]
+export const office = [
+  {
+    id: 1,
+    square: 82.2,
+    price: 2400,
+  },
+  {
+    id: 2,
+    square: 83.8,
+    price: 2400,
+  },
+  {
+    id: 3,
+    square: 38.8,
+    price: 1800,
+  },
+  {
+    id: 4,
+    square: 35.2,
+    price: 1700,
+  },
+  {
+    id: 5,
+    square: 38.5,
+    price: 1800,
+  },
+  {
+    id: 6,
+    square: 38.5,
+    price: 1800,
+  },
+  {
+    id: 7,
+    square: 86.3,
+    price: 2600,
+  },
+  {
+    id: 8,
+    square: 81.1,
+    price: 2500,
+  },
+  {
+    id: 9,
+    square: 92.5,
+    price: 3000,
+  },
+  {
+    id: 10,
+    square: 96.2,
+    price: 3100,
+  },
+]
