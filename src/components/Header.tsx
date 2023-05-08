@@ -34,7 +34,7 @@ const Header: React.FC<IHeader> = ({ currentref }) => {
               Контакты
             </a> */}
             <AnchorLink href={currentref}>Контакты</AnchorLink>
-            {window.location.pathname === "/" && (
+            {window.location.pathname === "/vk_booking/" && (
               <label htmlFor="selectTower" className="link link--start">
                 Начать работу
               </label>
