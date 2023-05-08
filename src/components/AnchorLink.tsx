@@ -20,7 +20,7 @@ const AnchorLink: React.FC<AnchorLinkProps> = ({ href, children }) => {
   }))
 
   const handleScroll = () => {
-    set({
+    set.start({
       opacity: window.scrollY > 100 ? 0 : 1,
       // y: window.scrollY > 100 ? 20 : 0,
     })

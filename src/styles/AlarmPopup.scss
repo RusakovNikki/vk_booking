@@ -58,10 +58,16 @@
     overflow-wrap: break-word;
   }
 
+  &__img {
+    width: 200px;
+    height: 200px;
+  }
+
   &__form {
     display: flex;
     flex-direction: column;
     margin-top: 15px;
+    align-items: center;
 
     input {
       border: 1px solid lightgray;

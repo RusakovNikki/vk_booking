@@ -1,11 +1,13 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import "../styles/SeatMap.scss"
 import { office } from "../data"
 import { useAppDispatch, useAppSelector } from "../hooks"
 import { setComment, setSelectedItem } from "../store/formSlice"
 import { useNavigate } from "react-router-dom"
+import StatusPopup from "../components/StatusPopup"
 
 const ResultPage = () => {
+  const [popup, setPopup] = useState<boolean>(false)
   const data = useAppSelector((state) => state.form)
   const navigate = useNavigate()
   const { dateBooking, durationBooking, levelTower, timeBooking, typeOfTower } =
@@ -32,6 +34,8 @@ const ResultPage = () => {
   }
 
   const submitHandler = () => {
+    setPopup(true)
+    dispatch(setComment(""))
     console.log(data)
   }
 
@@ -81,6 +85,7 @@ const ResultPage = () => {
               </label>
               <div className="feedback-form__box">
                 <textarea
+                  value={data.comment}
                   onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
                     dispatch(setComment(e.target.value))
                   }
@@ -97,6 +102,14 @@ const ResultPage = () => {
             </div>
           </div>
         </section>
+      )}
+      {popup && (
+        <StatusPopup
+          popup={popup}
+          setPopup={setPopup}
+          message="Спасибо за обращение!"
+          status="succes"
+        />
       )}
     </div>
   )

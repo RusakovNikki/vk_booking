@@ -153,6 +153,8 @@ li {
     &--btn {
       width: 15%;
       min-width: 92px;
+      display: flex;
+      gap: 10px;
     }
 
     &:first-child .list__control {
@@ -183,6 +185,11 @@ li {
     font-weight: bold;
     border-radius: 10px;
     transition: all 0.1s;
+
+    &--reset {
+      background-color: red;
+      width: 40px;
+    }
 
     &:hover {
       color: rgba($color: #fff, $alpha: 0.8);

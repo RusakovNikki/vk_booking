@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import Select, { SingleValue } from "react-select"
+import CreatableSelect, { SingleValue } from "react-select"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import { towers, levels, time, duration } from "../data"
@@ -24,30 +24,30 @@ const FormItems: React.FC = () => {
   const data = useAppSelector((state) => state.form)
 
   const onChangetower = (newValue: SingleValue<IOptionsSelect>) => {
-    if (newValue) {
-      dispatch(setTypeOfTower(newValue.value))
-      setIsEmptyTowerInput(false)
-    }
+    if (newValue === null) {
+      dispatch(setTypeOfTower(""))
+    } else dispatch(setTypeOfTower(newValue.value))
+    setIsEmptyTowerInput(false)
   }
   const onChangeLevels = (newValue: SingleValue<IOptionsSelect>) => {
-    if (newValue) {
-      dispatch(setLevelTower(newValue.value))
-      setIsEmptyLevelInput(false)
-    }
+    if (newValue === null) {
+      dispatch(setLevelTower(""))
+    } else dispatch(setLevelTower(newValue.value))
+    setIsEmptyLevelInput(false)
   }
 
   const onChangeTime = (newValue: SingleValue<IOptionsSelect>) => {
-    if (newValue) {
-      dispatch(setTimeBooking(newValue.value))
-      setIsEmptyTimeInput(false)
-    }
+    if (newValue === null) {
+      dispatch(setTimeBooking(""))
+    } else dispatch(setTimeBooking(newValue.value))
+    setIsEmptyTimeInput(false)
   }
 
   const onChangeDuration = (newValue: SingleValue<IOptionsSelect>) => {
-    if (newValue) {
-      dispatch(setDurationBooking(newValue.value))
-      setIsEmptyDurationInput(false)
-    }
+    if (newValue === null) {
+      dispatch(setDurationBooking(""))
+    } else dispatch(setDurationBooking(newValue.value))
+    setIsEmptyDurationInput(false)
   }
 
   const onChangeDate = (newValue: string) => {
@@ -63,7 +63,8 @@ const FormItems: React.FC = () => {
         <label className="main__label" htmlFor="react-select-2-input">
           Выбор башни
         </label>
-        <Select
+        <CreatableSelect
+          isClearable
           onMenuClose={() => {
             if (!data.typeOfTower) setIsEmptyTowerInput(true)
           }}
@@ -80,7 +81,8 @@ const FormItems: React.FC = () => {
         <label className="main__label label" htmlFor="react-select-3-input">
           Выбор этажа
         </label>
-        <Select
+        <CreatableSelect
+          isClearable
           onMenuClose={() => {
             if (!data.levelTower) setIsEmptyLevelInput(true)
           }}
@@ -109,7 +111,8 @@ const FormItems: React.FC = () => {
         <label className="main__label" htmlFor="react-select-4-input">
           Время начала
         </label>
-        <Select
+        <CreatableSelect
+          isClearable
           onMenuClose={() => {
             if (!data.timeBooking) setIsEmptyTimeInput(true)
           }}
@@ -124,7 +127,8 @@ const FormItems: React.FC = () => {
         <label className="main__label" htmlFor="react-select-5-input">
           Продолжительность
         </label>
-        <Select
+        <CreatableSelect
+          isClearable
           onMenuClose={() => {
             if (!data.durationBooking) setIsEmptyDurationInput(true)
           }}

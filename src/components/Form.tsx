@@ -34,8 +34,6 @@ const Form: React.FC = () => {
     }
   }
   useEffect(() => {
-    console.log("qqq")
-
     dispatch(setDefaultValue())
   }, [])
 
@@ -46,9 +44,12 @@ const Form: React.FC = () => {
           <FormItems />
         </div>
         <div className="main__form-item--btn">
-          <button className="main__btn btn" onClick={searchResult}>
+          <button className="main__btn" onClick={searchResult}>
             Найти коворкинг
           </button>
+          {/* <button className="main__btn main__btn--reset" onClick={resetForm}>
+            x
+          </button> */}
         </div>
       </form>
       {alarm && <AlarmPopup alarm={alarm} setAlarm={setAlarm} error={error} />}
