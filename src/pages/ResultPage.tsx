@@ -57,7 +57,8 @@ const ResultPage = () => {
     )
   }
 
-  const submitHandler = () => {
+  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
     setPopup(true)
     dispatch(setComment(""))
 
@@ -130,7 +131,7 @@ const ResultPage = () => {
               <label className="feedback-form__label" htmlFor="textarea">
                 Вы так же можете оставить комментарий к своему заказу
               </label>
-              <div className="feedback-form__box">
+              <form className="feedback-form__box" onSubmit={submitHandler}>
                 <textarea
                   value={data.comment}
                   onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
@@ -139,13 +140,8 @@ const ResultPage = () => {
                   className="feedback-form__textarea"
                   id="textarea"
                 ></textarea>
-                <button
-                  className="feedback-form__btn button"
-                  onClick={submitHandler}
-                >
-                  Отправить
-                </button>
-              </div>
+                <button className="feedback-form__btn button">Отправить</button>
+              </form>
             </div>
           </div>
         </section>
