@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useMemo } from "react"
 import CreatableSelect, { SingleValue } from "react-select"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
@@ -37,7 +37,6 @@ const FormItems: React.FC = () => {
   }
 
   const onChangeTime = (newValue: SingleValue<IOptionsSelect>) => {
-    debugger
     if (newValue === null) {
       dispatch(setTimeBooking(""))
     } else dispatch(setTimeBooking(newValue.value))
@@ -58,7 +57,7 @@ const FormItems: React.FC = () => {
     }
   }
 
-  const getValueSelect = (value: string, type: string) => {
+  const getValueSelect = (value: string = "", type: string) => {
     switch (type) {
       case "typeOfTower":
         return data.typeOfTower
@@ -78,7 +77,22 @@ const FormItems: React.FC = () => {
           : { value: "", label: "" }
     }
   }
-  console.log(data)
+
+  const getValueTypeOfTower = useMemo(() => {
+    return getValueSelect(data.typeOfTower, "typeOfTower")
+  }, [data.typeOfTower])
+
+  const getValueLevelTower = useMemo(() => {
+    return getValueSelect(data.levelTower, "levelTower")
+  }, [data.levelTower])
+
+  const getValueTimeBooking = useMemo(() => {
+    return getValueSelect(data.timeBooking, "timeBooking")
+  }, [data.timeBooking])
+
+  const getValueDurationBooking = useMemo(() => {
+    return getValueSelect(data.durationBooking, "durationBooking")
+  }, [data.durationBooking])
 
   return (
     <>
@@ -91,7 +105,8 @@ const FormItems: React.FC = () => {
           classNamePrefix="list"
           options={towers}
           placeholder=""
-          value={getValueSelect(data.typeOfTower || "", "typeOfTower")}
+          // value={getValueSelect(data.typeOfTower, "typeOfTower")}
+          value={getValueTypeOfTower}
           onMenuClose={() => {
             if (!data.typeOfTower) setIsEmptyTowerInput(true)
           }}
@@ -107,7 +122,8 @@ const FormItems: React.FC = () => {
         </label>
         <CreatableSelect
           isClearable
-          value={getValueSelect(data.levelTower || "", "levelTower")}
+          // value={getValueSelect(data.levelTower, "levelTower")}
+          value={getValueLevelTower}
           onMenuClose={() => {
             if (!data.levelTower) setIsEmptyLevelInput(true)
           }}
@@ -141,7 +157,8 @@ const FormItems: React.FC = () => {
         </label>
         <CreatableSelect
           isClearable
-          value={getValueSelect(data.timeBooking || "", "timeBooking")}
+          // value={getValueSelect(data.timeBooking, "timeBooking")}
+          value={getValueTimeBooking}
           onMenuClose={() => {
             if (!data.timeBooking) setIsEmptyTimeInput(true)
           }}
@@ -158,7 +175,8 @@ const FormItems: React.FC = () => {
         </label>
         <CreatableSelect
           isClearable
-          value={getValueSelect(data.durationBooking || "", "durationBooking")}
+          // value={getValueSelect(data.durationBooking, "durationBooking")}
+          value={getValueDurationBooking}
           onMenuClose={() => {
             if (!data.durationBooking) setIsEmptyDurationInput(true)
           }}
