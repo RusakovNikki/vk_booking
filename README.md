@@ -24,17 +24,17 @@ npm start
 
 ## Используемые технологии
 
-- [TypeScript](https://www.typescriptlang.org/docs/handbook/react.html) - Типизированный язык программирования;
-- [React](https://ru.reactjs.org/) - JavaScript-библиотека для создания пользовательских интерфейсов;
-- [Redux Toolkit](https://redux-toolkit.js.org/) - Библиотека для JavaScript, предназначенная для управления состоянием приложения;
-- [Redux Persist](https://www.npmjs.com/package/redux-persist) - Библиотека для сохранения и восстановления состояния Redux в приложении;
-- [React Router Dom](https://reactrouter.com/en/main) - JavaScript-библиотека для создания маршрутизации в веб-приложениях;
+- [TypeScript](https://www.typescriptlang.org/docs/handbook/react.html){:target="\_blank"} - Типизированный язык программирования;
+- [React](https://ru.reactjs.org/){:target="\_blank"} - JavaScript-библиотека для создания пользовательских интерфейсов;
+- [Redux Toolkit](https://redux-toolkit.js.org/){:target="\_blank"} - Библиотека для JavaScript, предназначенная для управления состоянием приложения;
+- [Redux Persist](https://www.npmjs.com/package/redux-persist){:target="\_blank"} - Библиотека для сохранения и восстановления состояния Redux в приложении;
+- [React Router Dom](https://reactrouter.com/en/main){:target="\_blank"} - JavaScript-библиотека для создания маршрутизации в веб-приложениях;
 - [React Spring](https://react-spring.dev/docs) - Анимация приложения;
-- [React Datepicker](https://www.npmjs.com/package/react-datepicker) - Поле ввода даты;
-- [React Select](https://react-select.com/home) - Выподающий список для формы;
-- [SASS](https://www.npmjs.com/package/sass) - Препроцессор для CSS;
-- [useMemo](https://react.dev/reference/react/useMemo) - Хук из React JS, предназначен для вычесления данных только при их изменении;
-- [BEM](https://ru.bem.info/methodology/quick-start/) - Методология для написания вёрстки сайта.
+- [React Datepicker](https://www.npmjs.com/package/react-datepicker){:target="\_blank"} - Поле ввода даты;
+- [React Select](https://react-select.com/home){:target="\_blank"} - Выподающий список для формы;
+- [SASS](https://www.npmjs.com/package/sass){:target="\_blank"} - Препроцессор для CSS;
+- [useMemo](https://react.dev/reference/react/useMemo){:target="\_blank"} - Хук из React JS, предназначен для вычесления данных только при их изменении;
+- [BEM](https://ru.bem.info/methodology/quick-start/){:target="\_blank"} - Методология для написания вёрстки сайта.
 
 ## Использование
 
@@ -55,14 +55,14 @@ npm start
   - ul Выбор зоны: можно выбрать как по нажатию на список, так и через нажатие на выбранную зону на изображении;
   - ul Поле ввода комментария: после того, как мы выбрали нужную зону, появляется поле для ввода комментария;
   - ul Отправка: при нажатии на кнопку "Отправить" в консоли высвечиваются данные в формате JSON такого рода:
-    `sh
-{
-comment: "Всем из VK привет!!!",
-dateBooking: "2023-05-17T02:00:00.000Z",
-durationBooking: "6 hour(s)",
-levelTower: "6 level",
-selectedItem: 1,
-timeBooking: "5:00",
-typeOfTower:"B"
-}
-`
+    ```sh
+    {
+        comment: "Всем из VK привет!!!",
+        dateBooking: "2023-05-17T02:00:00.000Z",
+        durationBooking: "6 hour(s)",
+        levelTower: "6 level",
+        selectedItem: 1,
+        timeBooking: "5:00",
+        typeOfTower:"B"
+    }
+    ```
