@@ -107,7 +107,7 @@ const ResultPage = () => {
           </div>
         </div>
       </section>
-      {data.selectedItem && (
+      {data.selectedItem ? (
         <section className="feedback-form">
           <div className="container">
             <div className="feedback-form__inner">
@@ -136,6 +136,8 @@ const ResultPage = () => {
             </div>
           </div>
         </section>
+      ) : (
+        <></>
       )}
       {popup && (
         <StatusPopup

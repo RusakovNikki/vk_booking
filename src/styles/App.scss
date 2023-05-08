@@ -142,7 +142,7 @@ li {
 
   &__form-items {
     display: flex;
-    width: 90%;
+    width: 80%;
     gap: 2px;
   }
 
@@ -151,7 +151,7 @@ li {
     width: 25%;
 
     &--btn {
-      width: 15%;
+      width: 20%;
       min-width: 92px;
       display: flex;
       gap: 10px;
@@ -189,7 +189,7 @@ li {
 
     &--reset {
       background-color: red;
-      width: 40px;
+      // ьшwidth: 40px;
       height: 35px;
     }
 

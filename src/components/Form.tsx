@@ -50,10 +50,10 @@ const Form: React.FC = () => {
         </div>
         <div className="main__form-item--btn">
           <button className="main__btn" onClick={searchResult}>
-            Найти коворкинг
+            Отправить
           </button>
           <button className="main__btn main__btn--reset" onClick={resetForm}>
-            x
+            Сбросить
           </button>
         </div>
       </form>

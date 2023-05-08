@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react"
 import { Routes, Route } from "react-router-dom"
 import "./styles/App.scss"
+import "./styles/media.scss"
 import HomePage from "./pages/HomePage"
 import ResultPage from "./pages/ResultPage"
 import NotFoundPage from "./pages/NotFoundPage"

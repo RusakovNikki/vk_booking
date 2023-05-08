@@ -9,7 +9,7 @@ import store from "./store"
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 root.render(
-  <BrowserRouter basename="vk_booking/">
+  <BrowserRouter basename="vk_booking">
     <Provider store={store}>
       <App />
     </Provider>
