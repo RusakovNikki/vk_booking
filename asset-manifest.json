@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.a68214e5.css",
-    "main.js": "/static/js/main.e5d926dd.js",
-    "static/media/scheme.png": "/static/media/scheme.9eaa012afeb390464147.png",
-    "static/media/succes.svg": "/static/media/succes.22542a876ce5facbd0286f0e35c3640e.svg",
-    "index.html": "/index.html",
-    "static/media/switch.svg": "/static/media/switch.1d2746cc0410b99508ee.svg",
-    "static/media/leave.svg": "/static/media/leave.b55a3fc4bc2bc41ae669.svg",
-    "static/media/compass.svg": "/static/media/compass.fba6ec159554bd14ae0d.svg",
-    "main.a68214e5.css.map": "/static/css/main.a68214e5.css.map",
-    "main.e5d926dd.js.map": "/static/js/main.e5d926dd.js.map"
+    "main.css": "/vk_booking/static/css/main.fe03fb62.css",
+    "main.js": "/vk_booking/static/js/main.d40310a2.js",
+    "static/media/scheme.png": "/vk_booking/static/media/scheme.9eaa012afeb390464147.png",
+    "static/media/succes.svg": "/vk_booking/static/media/succes.22542a876ce5facbd0286f0e35c3640e.svg",
+    "index.html": "/vk_booking/index.html",
+    "static/media/switch.svg": "/vk_booking/static/media/switch.1d2746cc0410b99508ee.svg",
+    "static/media/leave.svg": "/vk_booking/static/media/leave.b55a3fc4bc2bc41ae669.svg",
+    "static/media/compass.svg": "/vk_booking/static/media/compass.fba6ec159554bd14ae0d.svg",
+    "main.fe03fb62.css.map": "/vk_booking/static/css/main.fe03fb62.css.map",
+    "main.d40310a2.js.map": "/vk_booking/static/js/main.d40310a2.js.map"
   },
   "entrypoints": [
-    "static/css/main.a68214e5.css",
-    "static/js/main.e5d926dd.js"
+    "static/css/main.fe03fb62.css",
+    "static/js/main.d40310a2.js"
   ]
 }
