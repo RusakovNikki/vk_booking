@@ -5,7 +5,7 @@ export type Form = {
   levelTower: string
   timeBooking: string
   durationBooking: string
-  dateBooking: string
+  dateBooking: string | null
   selectedItem: number
   comment: string
 }
@@ -15,7 +15,8 @@ const initialState: Form = {
   levelTower: "",
   timeBooking: "",
   durationBooking: "",
-  dateBooking: new Date().toISOString(),
+  // dateBooking: new Date().toISOString(),
+  dateBooking: null,
   selectedItem: 0,
   comment: "",
 }

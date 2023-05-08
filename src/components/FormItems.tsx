@@ -57,6 +57,25 @@ const FormItems: React.FC = () => {
     }
   }
 
+  const getValueSelect = (value: string, type: string) => {
+    switch (type) {
+      case "typeOfTower":
+        return data.typeOfTower
+          ? towers.find((item) => item.value === value)
+          : ""
+      case "levelTower":
+        return data.levelTower
+          ? levels.find((item) => item.value === value)
+          : ""
+      case "timeBooking":
+        return data.levelTower ? time.find((item) => item.value === value) : ""
+      case "durationBooking":
+        return data.durationBooking
+          ? duration.find((item) => item.value === value)
+          : ""
+    }
+  }
+
   return (
     <>
       <div className="main__form-item">
@@ -65,13 +84,14 @@ const FormItems: React.FC = () => {
         </label>
         <CreatableSelect
           isClearable
+          classNamePrefix="list"
+          options={towers}
+          placeholder=""
+          value={getValueSelect(data.typeOfTower || "", "typeOfTower")}
           onMenuClose={() => {
             if (!data.typeOfTower) setIsEmptyTowerInput(true)
           }}
-          classNamePrefix="list"
           onChange={onChangetower}
-          placeholder=""
-          options={towers}
         />
         {isEmptyTowerInput && (
           <div className="main__item-decorate smooth"></div>
@@ -83,6 +103,7 @@ const FormItems: React.FC = () => {
         </label>
         <CreatableSelect
           isClearable
+          value={getValueSelect(data.levelTower || "", "levelTower")}
           onMenuClose={() => {
             if (!data.levelTower) setIsEmptyLevelInput(true)
           }}
@@ -100,7 +121,10 @@ const FormItems: React.FC = () => {
           Дата
         </label>
         <DatePicker
-          selected={new Date(data.dateBooking)}
+          onCalendarClose={() => {
+            if (!data.dateBooking) setIsEmptyDate(true)
+          }}
+          selected={data.dateBooking ? new Date(data.dateBooking) : null}
           onChange={(date: Date) => {
             if (date) onChangeDate(date.toISOString())
           }}
@@ -113,6 +137,7 @@ const FormItems: React.FC = () => {
         </label>
         <CreatableSelect
           isClearable
+          value={getValueSelect(data.timeBooking || "", "timeBooking")}
           onMenuClose={() => {
             if (!data.timeBooking) setIsEmptyTimeInput(true)
           }}
@@ -129,6 +154,7 @@ const FormItems: React.FC = () => {
         </label>
         <CreatableSelect
           isClearable
+          value={getValueSelect(data.durationBooking || "", "durationBooking")}
           onMenuClose={() => {
             if (!data.durationBooking) setIsEmptyDurationInput(true)
           }}

@@ -155,6 +155,7 @@ li {
       min-width: 92px;
       display: flex;
       gap: 10px;
+      align-items: center;
     }
 
     &:first-child .list__control {
@@ -189,6 +190,7 @@ li {
     &--reset {
       background-color: red;
       width: 40px;
+      height: 35px;
     }
 
     &:hover {

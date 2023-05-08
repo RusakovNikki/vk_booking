@@ -37,6 +37,11 @@ const Form: React.FC = () => {
     dispatch(setDefaultValue())
   }, [])
 
+  const resetForm = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    dispatch(setDefaultValue())
+  }
+
   return (
     <>
       <form className="main__form" action="#">
@@ -47,9 +52,9 @@ const Form: React.FC = () => {
           <button className="main__btn" onClick={searchResult}>
             Найти коворкинг
           </button>
-          {/* <button className="main__btn main__btn--reset" onClick={resetForm}>
+          <button className="main__btn main__btn--reset" onClick={resetForm}>
             x
-          </button> */}
+          </button>
         </div>
       </form>
       {alarm && <AlarmPopup alarm={alarm} setAlarm={setAlarm} error={error} />}
