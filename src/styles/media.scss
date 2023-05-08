@@ -1,5 +1,8 @@
 @media screen and (max-width: 875px) {
   .main {
+    &__item-decorate {
+      display: none;
+    }
     &__desc {
       display: none;
     }

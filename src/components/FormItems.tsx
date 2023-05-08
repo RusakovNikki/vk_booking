@@ -102,7 +102,7 @@ const FormItems: React.FC = () => {
         </label>
         <CreatableSelect
           inputId="selectTower"
-          isClearable
+          isClearable={Boolean(getValueTypeOfTower?.label)}
           classNamePrefix="list"
           options={towers}
           placeholder=""
@@ -121,7 +121,7 @@ const FormItems: React.FC = () => {
           Выбор этажа
         </label>
         <CreatableSelect
-          isClearable
+          isClearable={Boolean(getValueLevelTower?.label)}
           inputId="selectLevel"
           value={getValueLevelTower}
           onMenuClose={() => {
@@ -158,8 +158,7 @@ const FormItems: React.FC = () => {
         </label>
         <CreatableSelect
           inputId="selectTime"
-          isClearable
-          // value={getValueSelect(data.timeBooking, "timeBooking")}
+          isClearable={Boolean(getValueTimeBooking?.label)}
           value={getValueTimeBooking}
           onMenuClose={() => {
             if (!data.timeBooking) setIsEmptyTimeInput(true)
@@ -176,9 +175,8 @@ const FormItems: React.FC = () => {
           Продолжительность
         </label>
         <CreatableSelect
-          isClearable
+          isClearable={Boolean(getValueDurationBooking?.label)}
           inputId="selectDuration"
-          // value={getValueSelect(data.durationBooking, "durationBooking")}
           value={getValueDurationBooking}
           onMenuClose={() => {
             if (!data.durationBooking) setIsEmptyDurationInput(true)

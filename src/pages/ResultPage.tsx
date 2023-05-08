@@ -60,7 +60,7 @@ const ResultPage = () => {
             необходимую зону
           </h1>
           <CreatableSelect
-            isClearable
+            isClearable={Boolean(item?.label)}
             value={item}
             classNamePrefix="list"
             defaultValue={{
@@ -130,7 +130,7 @@ const ResultPage = () => {
                   className="feedback-form__btn button"
                   onClick={submitHandler}
                 >
-                  Подать заявку
+                  Отправить
                 </button>
               </div>
             </div>

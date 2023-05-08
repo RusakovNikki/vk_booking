@@ -6,7 +6,7 @@ export const towers: IOptionsSelect[] = [
   { value: "B", label: "Башня Б" },
 ]
 
-export const levels: IOptionsSelect[] = new Array(24).fill({}).map((_, i) => ({
+export const levels: IOptionsSelect[] = new Array(25).fill({}).map((_, i) => ({
   value: `${i + 3} level`,
   label: `${i + 3} этаж`,
 }))

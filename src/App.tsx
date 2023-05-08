@@ -26,7 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage currentref={currentref} />} />
         <Route path="/result" element={<ResultPage />} />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="/*" element={<NotFoundPage />} />
       </Routes>
       <Footer currentref={currentref} />
     </>
