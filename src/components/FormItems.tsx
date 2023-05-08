@@ -37,6 +37,7 @@ const FormItems: React.FC = () => {
   }
 
   const onChangeTime = (newValue: SingleValue<IOptionsSelect>) => {
+    debugger
     if (newValue === null) {
       dispatch(setTimeBooking(""))
     } else dispatch(setTimeBooking(newValue.value))
@@ -62,19 +63,22 @@ const FormItems: React.FC = () => {
       case "typeOfTower":
         return data.typeOfTower
           ? towers.find((item) => item.value === value)
-          : ""
+          : { value: "", label: "" }
       case "levelTower":
         return data.levelTower
           ? levels.find((item) => item.value === value)
-          : ""
+          : { value: "", label: "" }
       case "timeBooking":
-        return data.levelTower ? time.find((item) => item.value === value) : ""
+        return data.timeBooking
+          ? time.find((item) => item.value === value)
+          : { value: "", label: "" }
       case "durationBooking":
         return data.durationBooking
           ? duration.find((item) => item.value === value)
-          : ""
+          : { value: "", label: "" }
     }
   }
+  console.log(data)
 
   return (
     <>
