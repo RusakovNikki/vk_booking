@@ -13,10 +13,9 @@ export type Form = {
 const initialState: Form = {
   typeOfTower: "",
   levelTower: "",
+  dateBooking: null,
   timeBooking: "",
   durationBooking: "",
-  // dateBooking: new Date().toISOString(),
-  dateBooking: null,
   selectedItem: 0,
   comment: "",
 }

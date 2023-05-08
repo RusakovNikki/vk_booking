@@ -13,7 +13,7 @@ const HomePage: React.FC<IHome> = () => {
           <div className="container">
             <section className="main__inner">
               <h1 className="main__title title">Бронирование коворкингов</h1>
-              <p className="main__desc">В любое время в центре города</p>
+              <p className="main__desc">В удобное время в удобном месте</p>
               <Form />
             </section>
           </div>

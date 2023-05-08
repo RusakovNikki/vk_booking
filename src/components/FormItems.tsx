@@ -97,15 +97,15 @@ const FormItems: React.FC = () => {
   return (
     <>
       <div className="main__form-item">
-        <label className="main__label" htmlFor="react-select-2-input">
+        <label className="main__label" htmlFor="selectTower">
           Выбор башни
         </label>
         <CreatableSelect
+          inputId="selectTower"
           isClearable
           classNamePrefix="list"
           options={towers}
           placeholder=""
-          // value={getValueSelect(data.typeOfTower, "typeOfTower")}
           value={getValueTypeOfTower}
           onMenuClose={() => {
             if (!data.typeOfTower) setIsEmptyTowerInput(true)
@@ -117,12 +117,12 @@ const FormItems: React.FC = () => {
         )}
       </div>
       <div className="main__form-item">
-        <label className="main__label label" htmlFor="react-select-3-input">
+        <label className="main__label label" htmlFor="selectLevel">
           Выбор этажа
         </label>
         <CreatableSelect
           isClearable
-          // value={getValueSelect(data.levelTower, "levelTower")}
+          inputId="selectLevel"
           value={getValueLevelTower}
           onMenuClose={() => {
             if (!data.levelTower) setIsEmptyLevelInput(true)
@@ -141,6 +141,7 @@ const FormItems: React.FC = () => {
           Дата
         </label>
         <DatePicker
+          id="date"
           onCalendarClose={() => {
             if (!data.dateBooking) setIsEmptyDate(true)
           }}
@@ -152,10 +153,11 @@ const FormItems: React.FC = () => {
         {isEmptyDate && <div className="main__item-decorate smooth"></div>}
       </div>
       <div className="main__form-item">
-        <label className="main__label" htmlFor="react-select-4-input">
+        <label className="main__label" htmlFor="selectTime">
           Время начала
         </label>
         <CreatableSelect
+          inputId="selectTime"
           isClearable
           // value={getValueSelect(data.timeBooking, "timeBooking")}
           value={getValueTimeBooking}
@@ -170,11 +172,12 @@ const FormItems: React.FC = () => {
         {isEmptyTimeInput && <div className="main__item-decorate smooth"></div>}
       </div>
       <div className="main__form-item">
-        <label className="main__label" htmlFor="react-select-5-input">
+        <label className="main__label" htmlFor="selectDuration">
           Продолжительность
         </label>
         <CreatableSelect
           isClearable
+          inputId="selectDuration"
           // value={getValueSelect(data.durationBooking, "durationBooking")}
           value={getValueDurationBooking}
           onMenuClose={() => {

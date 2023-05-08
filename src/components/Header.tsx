@@ -34,9 +34,14 @@ const Header: React.FC<IHeader> = ({ currentref }) => {
               Контакты
             </a> */}
             <AnchorLink href={currentref}>Контакты</AnchorLink>
-            <label htmlFor="react-select-2-input" className="link link--start">
-              Начать работу
-            </label>
+            {window.location.pathname === "/" && (
+              <label
+                htmlFor="react-select-2-input"
+                className="link link--start"
+              >
+                Начать работу
+              </label>
+            )}
           </nav>
         </div>
       </div>

@@ -9,6 +9,12 @@
 }
 
 .seat-map {
+  .list {
+    &__control {
+      border-radius: 10px !important;
+      margin-bottom: 10px;
+    }
+  }
   &__container {
     max-width: 1300px;
     height: 600px;
