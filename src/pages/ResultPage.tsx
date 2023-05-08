@@ -30,6 +30,19 @@ const ResultPage = () => {
     }
   }, [])
 
+  useEffect(() => {
+    if (data.selectedItem) {
+      setItem(
+        office
+          .map((item) => ({
+            value: item.id.toString(),
+            label: `Номер ${item.id}. ${item.square} м2`,
+          }))
+          .find((item) => item.value === data.selectedItem.toString())
+      )
+    }
+  }, [])
+
   const dispatch = useAppDispatch()
 
   const choiceItem = (id: number) => {

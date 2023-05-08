@@ -25,7 +25,7 @@ const Header: React.FC<IHeader> = ({ currentref }) => {
             <a className="header__logo-link" href="#">
               <img className="logo__img" src={logoPNG} alt="Логотип коипании" />
             </a>
-            <a className="logo__link" href="#">
+            <a className="logo__link">
               <span className="logo__title">Jamboo Software</span>
             </a>
           </div>
@@ -34,7 +34,8 @@ const Header: React.FC<IHeader> = ({ currentref }) => {
               Контакты
             </a> */}
             <AnchorLink href={currentref}>Контакты</AnchorLink>
-            {window.location.pathname === "/vk_booking" && (
+            {(window.location.pathname === "/vk_booking" ||
+              window.location.pathname === "/vk_booking/") && (
               <label htmlFor="selectTower" className="link link--start">
                 Начать работу
               </label>
