@@ -12,6 +12,7 @@ import {
   setTimeBooking,
   setTypeOfTower,
 } from "../store/formSlice"
+import { getNormalDate } from "../utils/getNormalDate"
 
 const FormItems: React.FC = () => {
   const dispatch = useAppDispatch()
@@ -147,7 +148,7 @@ const FormItems: React.FC = () => {
           }}
           selected={data.dateBooking ? new Date(data.dateBooking) : null}
           onChange={(date: Date) => {
-            if (date) onChangeDate(date.toISOString())
+            if (date) onChangeDate(getNormalDate(date))
           }}
         />
         {isEmptyDate && <div className="main__item-decorate smooth"></div>}
